@@ -30,14 +30,11 @@ public class questao_4
     // < Função principal >
     public static void main(String[] args) {
         // < Declaração de variáveis locais >
-        String formatar;
         int segundos;
         
         segundos = entrada();
         
-        formatar = formatacao(segundos);
-        
-        JOptionPane.showMessageDialog(null, "Segundos informados: " + segundos + "\n\nHora formatada:\n" + formatar);
+        formatacao(segundos);
     }
     
     // < Subprogramas >
@@ -57,7 +54,7 @@ public class questao_4
     }
     
     // < Função para formatar os segundos em hh:mm:ss >
-    public static String formatacao(int segundos)
+    public static void formatacao(int segundos)
     {
         // < Declaração de variáveis locais >
         String formatar;
@@ -73,6 +70,6 @@ public class questao_4
         formatar = horas + ":" + minutos + ":" + segundos;
         
         // < Retorna a hora formatada >
-        return formatar;
+        JOptionPane.showMessageDialog(null, "Segundos informados: " + segundos + "\n\nHora formatada:\n" + formatar);
     }
 }
