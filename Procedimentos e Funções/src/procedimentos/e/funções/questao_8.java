@@ -44,7 +44,15 @@ public class questao_8
         
         // < Entrada de dados >
         sexo = JOptionPane.showInputDialog(null, "MASCULINO ou FEMININO\n\nInforme o sexo:", "Cálculo de Peso Ideal", 3);
+       
+        // < Verifica se o sexo é válido>
+        if (!(sexo.equalsIgnoreCase("masculino") || sexo.equalsIgnoreCase("feminino")))
+        {
+            JOptionPane.showMessageDialog(null, "Informe um sexo válido!", "Cálculo de Peso Ideal", 2);
+            entrada();
+        }
         
+        // < Entrada de dados >
         resposta = JOptionPane.showInputDialog(null, "Informe a altura:", "Cálculo de Peso Ideal", 3);
         altura = Float.parseFloat(resposta);
         
@@ -52,19 +60,26 @@ public class questao_8
         peso_ideal(sexo, altura);
     }
     
+    // < Função para aplicação da fórmula ideal = 72.7 x alt - 58 ou ideal = 62.1 x alt - 44.7 > 
     public static void peso_ideal(String sexo, float altura)
     {
-        double ideal;
+        float ideal;
         
         if (sexo.equalsIgnoreCase("feminino"))
         {
-            ideal = 72.7 * altura - 58;
+            ideal = (float) (72.7 * altura - 58);
         }
         else
         {
-            ideal = 62.1 * altura - 44.7;
+            ideal = (float) (62.1 * altura - 44.7);
         }
         
-        saida(ideal);
+        saida(ideal, altura, sexo);
+    }
+    
+    // < Função para impressão do resultado >
+    public static void saida(float ideal, float altura, String sexo)
+    {
+        JOptionPane.showMessageDialog(null, "Sexo: " + sexo.toLowerCase() + "\n\nO peso ideal para a altura " + altura + " é de " + Math.round(ideal) + "kg.", "Cálculo de Peso Ideal", 1);
     }
 }
