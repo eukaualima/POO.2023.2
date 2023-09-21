@@ -21,7 +21,7 @@ import javax.swing.*;
  * de 5,0 a 6,9 	C 
  * de 7,0 a 8,9 	B 
  * de 9,0 a 10,0 	A 
- * @note Lista 1 de Procedimentos e Funções / Programação Orientada a Objetos 2023.2 - IFBA Campus Camaçari - Prof. Dr. Fábio Cruz
+ * @note Lista 1 de Procedimentos e Funções / Programação Orientada a Objetos 2023.2 - IFBA Campus Camaçari - Prof. Dr. Fábio Marques
  **/
 
 /*

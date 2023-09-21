@@ -24,7 +24,7 @@ import javax.swing.*;
  *   11-13 anos 	Juvenil A 
  *   14-17 anos 	Juvenil B 
  *   Maiores de 	18 anos (inclusive) Adulto
- * @note Lista 1 de Procedimentos e Funções / Programação Orientada a Objetos 2023.2 - IFBA Campus Camaçari - Prof. Dr. Fábio Cruz
+ * @note Lista 1 de Procedimentos e Funções / Programação Orientada a Objetos 2023.2 - IFBA Campus Camaçari - Prof. Dr. Fábio Marques
  **/
 
 /*

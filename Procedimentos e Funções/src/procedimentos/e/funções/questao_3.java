@@ -18,7 +18,7 @@ import javax.swing.*;
  * e retorna o valor lógico Verdadeiro caso o valor seja primo e Falso em caso 
  * contrário.  O programa principal imprimirá o texto “O Número é Primo”, caso 
  * a função retorne verdadeiro.
- * @note Lista 1 de Procedimentos e Funções / Programação Orientada a Objetos 2023.2 - IFBA Campus Camaçari - Prof. Dr. Fábio Cruz
+ * @note Lista 1 de Procedimentos e Funções / Programação Orientada a Objetos 2023.2 - IFBA Campus Camaçari - Prof. Dr. Fábio Marques
  **/
 
 /*

@@ -18,7 +18,7 @@ import javax.swing.*;
  * parâmetro e uma letra. Se a letra for A o procedimento calcula e imprime a 
  * média aritmética das notas do aluno, se for P, a sua média ponderada (pesos: 
  * 5, 3 e 2) e se for H, a sua média harmônica.
- * @note Lista 1 de Procedimentos e Funções / Programação Orientada a Objetos 2023.2 - IFBA Campus Camaçari - Prof. Dr. Fábio Cruz
+ * @note Lista 1 de Procedimentos e Funções / Programação Orientada a Objetos 2023.2 - IFBA Campus Camaçari - Prof. Dr. Fábio Marques
  **/
 
 /*

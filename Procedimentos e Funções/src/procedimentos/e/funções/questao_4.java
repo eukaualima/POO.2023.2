@@ -17,7 +17,7 @@ import javax.swing.*;
  * @details Faça uma um procedimento que recebe por parâmetro o tempo de duração
  * de uma fábrica expressa em segundos e imprima esse tempo em horas, minutos e 
  * segundos (hh:mm:ss). 
- * @note Lista 1 de Procedimentos e Funções / Programação Orientada a Objetos 2023.2 - IFBA Campus Camaçari - Prof. Dr. Fábio Cruz
+ * @note Lista 1 de Procedimentos e Funções / Programação Orientada a Objetos 2023.2 - IFBA Campus Camaçari - Prof. Dr. Fábio Marques
  **/
 
 /*

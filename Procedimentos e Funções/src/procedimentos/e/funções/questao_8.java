@@ -18,7 +18,7 @@ import javax.swing.*;
  * pessoa e retorna o seu peso ideal. Para homens, calcular o peso ideal usando 
  * a fórmula peso ideal = 72.7 x alt - 58 e, para mulheres, peso ideal = 62.1 x 
  * alt - 44.7. 
- * @note Lista 1 de Procedimentos e Funções / Programação Orientada a Objetos 2023.2 - IFBA Campus Camaçari - Prof. Dr. Fábio Cruz
+ * @note Lista 1 de Procedimentos e Funções / Programação Orientada a Objetos 2023.2 - IFBA Campus Camaçari - Prof. Dr. Fábio Marques
  **/
 
 /*

@@ -17,7 +17,7 @@ import javax.swing.*;
  * @details Faça uma função que recebe um valor inteiro e verifica se o valor é 
  * positivo ou negativo. A função deve retornar um valor booleano para o 
  * programa principal que imprimirá o resultado.
- * @note Lista 1 de Procedimentos e Funções / Programação Orientada a Objetos 2023.2 - IFBA Campus Camaçari - Prof. Dr. Fábio Cruz
+ * @note Lista 1 de Procedimentos e Funções / Programação Orientada a Objetos 2023.2 - IFBA Campus Camaçari - Prof. Dr. Fábio Marques
  **/
 
 /*
