@@ -5,6 +5,7 @@
  */
 package org.exemplos.poo.caneta;
 
+import static java.lang.System.exit;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,10 +13,11 @@ import javax.swing.JOptionPane;
  * @author aluno
  */
 public class frmCaneta extends javax.swing.JFrame {
-    Caneta caneta = new Caneta();
     /**
      * Creates new form frmCaneta
      */
+    Caneta caneta = new Caneta();
+    
     public frmCaneta() {
         initComponents();
     }
@@ -40,6 +42,9 @@ public class frmCaneta extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jToggleButton1 = new javax.swing.JToggleButton();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         BotaoCadastrar = new javax.swing.JButton();
         BotaoExibir = new javax.swing.JButton();
@@ -62,6 +67,7 @@ public class frmCaneta extends javax.swing.JFrame {
         LabelCarga1 = new javax.swing.JLabel();
         RadioBtTampada = new javax.swing.JRadioButton();
         RadioBtDestampada = new javax.swing.JRadioButton();
+        LabelPonta1 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -165,6 +171,7 @@ public class frmCaneta extends javax.swing.JFrame {
         CampoModelo.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         CampoModelo.setToolTipText("");
         CampoModelo.setBorder(javax.swing.BorderFactory.createTitledBorder("Modelo"));
+        CampoModelo.setOpaque(false);
         CampoModelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoModeloActionPerformed(evt);
@@ -174,6 +181,7 @@ public class frmCaneta extends javax.swing.JFrame {
         LabelCor.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         LabelCor.setText("Cor:");
 
+        buttonGroup1.add(RadioBtAzul);
         RadioBtAzul.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         RadioBtAzul.setText("Azul");
         RadioBtAzul.addActionListener(new java.awt.event.ActionListener() {
@@ -182,6 +190,7 @@ public class frmCaneta extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(RadioBtPreta);
         RadioBtPreta.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         RadioBtPreta.setText("Preta");
         RadioBtPreta.addActionListener(new java.awt.event.ActionListener() {
@@ -190,6 +199,7 @@ public class frmCaneta extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(RadioBtVermelha);
         RadioBtVermelha.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         RadioBtVermelha.setText("Vermelha");
         RadioBtVermelha.addActionListener(new java.awt.event.ActionListener() {
@@ -198,6 +208,7 @@ public class frmCaneta extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(RadioBtVerde);
         RadioBtVerde.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         RadioBtVerde.setText("Verde");
         RadioBtVerde.addActionListener(new java.awt.event.ActionListener() {
@@ -207,8 +218,9 @@ public class frmCaneta extends javax.swing.JFrame {
         });
 
         LabelPonta.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        LabelPonta.setText("Ponta:");
+        LabelPonta.setText("Estado:");
 
+        buttonGroup2.add(RadioBtPonta07);
         RadioBtPonta07.setText("0.7");
         RadioBtPonta07.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -216,6 +228,7 @@ public class frmCaneta extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup2.add(RadioBtPonta1);
         RadioBtPonta1.setText("1.0");
         RadioBtPonta1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -223,6 +236,7 @@ public class frmCaneta extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup2.add(RadioBtPonta14);
         RadioBtPonta14.setText("1.4");
         RadioBtPonta14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -230,6 +244,7 @@ public class frmCaneta extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup2.add(RadioBtPonta16);
         RadioBtPonta16.setText("1.6");
         RadioBtPonta16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -251,6 +266,7 @@ public class frmCaneta extends javax.swing.JFrame {
         LabelCarga1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         LabelCarga1.setText("%");
 
+        buttonGroup3.add(RadioBtTampada);
         RadioBtTampada.setText("Tampada");
         RadioBtTampada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -258,12 +274,16 @@ public class frmCaneta extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup3.add(RadioBtDestampada);
         RadioBtDestampada.setText("Destampada");
         RadioBtDestampada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RadioBtDestampadaActionPerformed(evt);
             }
         });
+
+        LabelPonta1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        LabelPonta1.setText("Ponta:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -290,18 +310,24 @@ public class frmCaneta extends javax.swing.JFrame {
                         .addComponent(CampoCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelCarga1))
-                    .addComponent(RadioBtDestampada)
-                    .addComponent(RadioBtTampada)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(LabelPonta)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(RadioBtPonta07)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LabelPonta)
+                            .addComponent(LabelPonta1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RadioBtPonta1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RadioBtPonta14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RadioBtPonta16)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(RadioBtPonta07)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(RadioBtPonta1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(RadioBtPonta14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(RadioBtPonta16))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(RadioBtTampada)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(RadioBtDestampada)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -321,20 +347,21 @@ public class frmCaneta extends javax.swing.JFrame {
                     .addComponent(RadioBtVerde))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(LabelPonta)
                     .addComponent(RadioBtPonta07)
                     .addComponent(RadioBtPonta1)
                     .addComponent(RadioBtPonta14, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(RadioBtPonta16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(RadioBtTampada)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(RadioBtDestampada)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(RadioBtPonta16)
+                    .addComponent(LabelPonta1))
+                .addGap(5, 5, 5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RadioBtTampada)
+                    .addComponent(LabelPonta)
+                    .addComponent(RadioBtDestampada))
+                .addGap(43, 43, 43)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {CampoCarga, CampoModelo});
@@ -347,7 +374,43 @@ public class frmCaneta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastrarActionPerformed
+        caneta.modelo = CampoModelo.getText();
         
+        if (RadioBtAzul.isSelected())
+        {
+            caneta.cor = RadioBtAzul.getText();
+        }
+        else if (RadioBtPreta.isSelected())
+        {
+            caneta.cor = RadioBtPreta.getText();
+        }
+        else if (RadioBtVermelha.isSelected())
+        {
+            caneta.cor = RadioBtVermelha.getText();
+        }
+        else
+        {
+            caneta.cor = RadioBtVerde.getText();
+        }
+        
+        if (RadioBtPonta07.isSelected())
+        {
+            caneta.ponta = Float.parseFloat(RadioBtPonta07.getText());
+        } 
+        else if (RadioBtPonta1.isSelected())
+        {
+            caneta.ponta = Float.parseFloat(RadioBtPonta1.getText());
+        }
+        else if (RadioBtPonta14.isSelected())
+        {
+            caneta.ponta = Float.parseFloat(RadioBtPonta14.getText());
+        }
+        else
+        {
+            caneta.ponta = Float.parseFloat(RadioBtPonta16.getText());
+        }
+        
+        caneta.carga = Integer.parseInt(CampoCarga.getText());
     }//GEN-LAST:event_BotaoCadastrarActionPerformed
 
     private void RadioBtAzulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioBtAzulActionPerformed
@@ -367,7 +430,7 @@ public class frmCaneta extends javax.swing.JFrame {
     }//GEN-LAST:event_RadioBtVerdeActionPerformed
 
     private void CampoModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoModeloActionPerformed
-        caneta.modelo = CampoModelo.getText();
+
     }//GEN-LAST:event_CampoModeloActionPerformed
 
     private void RadioBtPonta07ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioBtPonta07ActionPerformed
@@ -387,18 +450,25 @@ public class frmCaneta extends javax.swing.JFrame {
     }//GEN-LAST:event_RadioBtPonta16ActionPerformed
 
     private void RadioBtTampadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioBtTampadaActionPerformed
+        int erro = caneta.tampar();
         
+        if (erro > 0)
+        {
+            JOptionPane.showMessageDialog(this, "A caneta JÁ está tampada!");
+        }
     }//GEN-LAST:event_RadioBtTampadaActionPerformed
 
     private void RadioBtDestampadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioBtDestampadaActionPerformed
+        int erro = caneta.destampar();
         
+        if (erro > 0)
+        {
+            JOptionPane.showMessageDialog(this, "A caneta JÁ está destampada!");
+        }
     }//GEN-LAST:event_RadioBtDestampadaActionPerformed
 
     private void BotaoExibirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoExibirActionPerformed
-        if (caneta.modelo != null)
-        {
-            JOptionPane.showMessageDialog(null, "Modelo:");
-        }
+        JOptionPane.showMessageDialog(this, caneta);
     }//GEN-LAST:event_BotaoExibirActionPerformed
 
     private void BotaoTamparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoTamparActionPerformed
@@ -410,7 +480,7 @@ public class frmCaneta extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoDestamparActionPerformed
 
     private void BotaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSairActionPerformed
-        
+        exit(0);
     }//GEN-LAST:event_BotaoSairActionPerformed
 
     private void BotaoCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarMouseClicked
@@ -422,27 +492,11 @@ public class frmCaneta extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoExibirMouseClicked
 
     private void BotaoTamparMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoTamparMouseClicked
-        if (caneta.tampada)
-        {
-            JOptionPane.showMessageDialog(null, "Caneta já está tampada!");
-        }
-        else
-        {
-            caneta.tampada = true;
-            JOptionPane.showMessageDialog(null, "Você tampou a caneta!");
-        }
+        
     }//GEN-LAST:event_BotaoTamparMouseClicked
 
     private void BotaoDestamparMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoDestamparMouseClicked
-        if (!caneta.tampada)
-        {
-            JOptionPane.showMessageDialog(null, "Caneta já está destampada!");
-        }
-        else
-        {
-            caneta.tampada = false;
-            JOptionPane.showMessageDialog(null, "Você destampou a caneta!");
-        }
+        
     }//GEN-LAST:event_BotaoDestamparMouseClicked
 
     private void BotaoSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoSairMouseClicked
@@ -450,46 +504,8 @@ public class frmCaneta extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoSairMouseClicked
 
     private void CampoCargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoCargaActionPerformed
-        String carga;
-        carga = CampoCarga.getText();
         
-        caneta.carga = Integer.parseInt(carga);
     }//GEN-LAST:event_CampoCargaActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmCaneta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmCaneta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmCaneta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmCaneta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new frmCaneta().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoCadastrar;
@@ -502,6 +518,7 @@ public class frmCaneta extends javax.swing.JFrame {
     private javax.swing.JLabel LabelCarga1;
     private javax.swing.JLabel LabelCor;
     private javax.swing.JLabel LabelPonta;
+    private javax.swing.JLabel LabelPonta1;
     private javax.swing.JRadioButton RadioBtAzul;
     private javax.swing.JRadioButton RadioBtDestampada;
     private javax.swing.JRadioButton RadioBtPonta07;
@@ -512,6 +529,9 @@ public class frmCaneta extends javax.swing.JFrame {
     private javax.swing.JRadioButton RadioBtTampada;
     private javax.swing.JRadioButton RadioBtVerde;
     private javax.swing.JRadioButton RadioBtVermelha;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.Box.Filler filler1;
     private javax.swing.JColorChooser jColorChooser1;
     private javax.swing.JColorChooser jColorChooser2;

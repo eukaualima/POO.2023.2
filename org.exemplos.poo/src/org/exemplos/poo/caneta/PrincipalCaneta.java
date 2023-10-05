@@ -23,7 +23,7 @@ public class PrincipalCaneta
 {
     public static void main(String[] args)
     {
-        // < Declaração de variáveis locais >
+        /*// < Declaração de variáveis locais >
         int erro;
         
         // < Cria um novo objeto caneta >
@@ -67,6 +67,8 @@ public class PrincipalCaneta
        }
        
        // < Chama o método de escrever >
-        System.out.println(caneta.escrever());
+        System.out.println(caneta.escrever());*/
+        
+        new frmCaneta().setVisible(true);
     }
 }
