@@ -9,3 +9,5 @@
   * Primeira lista de questões sobre Procedimentos e Funções.
 * [Exercícios (Introdução à POO)](https://github.com/eukaualima/POO.2023.2/tree/main/org.exercios.poo)
   * Segunda lista de questões com 12 exercícios. Introdução ao conceito de classe e objeto.
+* [Exemplo de interface (Objeto caneta)](https://github.com/eukaualima/POO.2023.2/tree/main/org.exemplos.poo)
+  * Registro via interface de um objeto Caneta.
