@@ -70,6 +70,6 @@ public class Caneta
 
     @Override
     public String toString() {
-        return "CANETA CADASTRADA\n\nModelo: " + modelo + "\nCor: " + cor + "\nPonta: " + ponta + "\nCarga: " + carga + "%\nTampada: " + (tampada ? "Sim" : "Não");
+        return "" + modelo + " " + cor + " " + ponta + " " + carga + "% " + (tampada ? "Tampada" : "Destampada");
     }
 }

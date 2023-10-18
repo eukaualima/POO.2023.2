@@ -1,7 +1,4 @@
 package org.exemplos.poo.caneta;
-
-import java.util.Scanner;
-
 /*
 =---------------=
 =-> Cabeçalho <-=
