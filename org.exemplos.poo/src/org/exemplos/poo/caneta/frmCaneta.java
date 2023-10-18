@@ -8,6 +8,7 @@ package org.exemplos.poo.caneta;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class frmCaneta extends javax.swing.JFrame {
     Caneta caneta = new Caneta();
@@ -15,7 +16,7 @@ public class frmCaneta extends javax.swing.JFrame {
     // < Cria uma ArrayList para salvar as canetas na memória >
     ArrayList<Caneta> canetas = new ArrayList();
     
-    DefaultComboBoxModel modelo;
+    DefaultTableModel modelo;
     
     public frmCaneta() 
     {
@@ -25,7 +26,13 @@ public class frmCaneta extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         
         // < Cria um modelo >
-        modelo = (DefaultComboBoxModel) cbCaneta.getModel();
+        modelo = (DefaultTableModel) tbCaneta.getModel();
+        
+        modelo.addColumn("Modelo");
+        modelo.addColumn("Ponta");
+        modelo.addColumn("Cor");
+        modelo.addColumn("Carga");
+        modelo.addColumn("Estado");
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -58,13 +65,13 @@ public class frmCaneta extends javax.swing.JFrame {
         rbDestampada = new javax.swing.JRadioButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        cbCaneta = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
-        jSeparator3 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbCaneta = new javax.swing.JTable();
+        jSeparator3 = new javax.swing.JSeparator();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         jInternalFrame1.setVisible(true);
 
@@ -213,16 +220,25 @@ public class frmCaneta extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Downloads\\logout (1).png")); // NOI18N
-        jButton1.setText("Sair");
-        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        jLabel11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Downloads\\database (1).png")); // NOI18N
+        jLabel11.setText("Canetas cadastradas");
+
+        jLabel2.setText("Visualize o modelo, ponta, cor, carga e estado das canetas cadastradas.");
+
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
+
+        tbCaneta.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        tbCaneta.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
             }
-        });
+        ));
+        tbCaneta.setGridColor(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setViewportView(tbCaneta);
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
@@ -235,31 +251,16 @@ public class frmCaneta extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Downloads\\file.png")); // NOI18N
-        jButton3.setText("Exibir");
-        jButton3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Downloads\\logout (1).png")); // NOI18N
+        jButton1.setText("Sair");
+        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-
-        cbCaneta.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        cbCaneta.setMaximumRowCount(5);
-        cbCaneta.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        cbCaneta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbCanetaActionPerformed(evt);
-            }
-        });
-
-        jLabel11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Downloads\\decision.png")); // NOI18N
-        jLabel11.setText("Escolha uma caneta");
-
-        jLabel2.setText("Visualize o modelo, ponta, cor, carga e estado das canetas cadastradas.");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -310,22 +311,20 @@ public class frmCaneta extends javax.swing.JFrame {
                             .addComponent(jLabel11)
                             .addComponent(jLabel2)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(112, 112, 112)
                         .addComponent(lbCadastroCanetas))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(cbCaneta, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jButton2, jButton3});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jButton2});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -375,18 +374,17 @@ public class frmCaneta extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbCaneta, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton1, jButton2, jButton3});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton1, jButton2});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -396,7 +394,7 @@ public class frmCaneta extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -484,9 +482,9 @@ public class frmCaneta extends javax.swing.JFrame {
             return;
         }
         
-        // < Seta o modelo >
+        // < Seta o modelo 
         caneta.modelo = txtModelo.getText();
-
+        
         // < Seta a cor >
         if (rbAzul.isSelected())
         {
@@ -530,32 +528,23 @@ public class frmCaneta extends javax.swing.JFrame {
         canetas.add(caneta);
         
         // < Adiciona um elemento no modelo (combobox) >
-        modelo.addElement(caneta);
+        modelo.addRow(new Object[]{ caneta.modelo, caneta.cor, caneta.ponta, caneta.carga, caneta.tampada });
         
         // < Cria um novo objeto caneta para a próxima inserção >
         caneta = new Caneta();
         
+        
         // < Informa que foi cadastrada >
         JOptionPane.showMessageDialog(this, "Caneta cadastrada com sucesso!");
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void cbCanetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCanetaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbCanetaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
-    private javax.swing.JComboBox<String> cbCaneta;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -566,6 +555,7 @@ public class frmCaneta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -580,6 +570,7 @@ public class frmCaneta extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbTampada;
     private javax.swing.JRadioButton rbVerde;
     private javax.swing.JRadioButton rbVermelha;
+    private javax.swing.JTable tbCaneta;
     private javax.swing.JTextField txtCarga;
     private javax.swing.JTextField txtModelo;
     // End of variables declaration//GEN-END:variables
