@@ -9,7 +9,7 @@ public class ConexaoMySQL
     private static final String PASSWORD = "";
     private static final String LINK_DB = "jdbc:mysql://localhost:3306/papelaria";
     
-    public static Connection getConnection() throws Exception
+    public static Connection getConexao() throws Exception
     {
         Class.forName("com.mysql.jdbc.Driver");
         

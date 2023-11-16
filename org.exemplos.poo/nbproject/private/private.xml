@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/aluno/Documents/NetBeansProjects/aula03/build/classes/aula03/org.exemplos.poo/src/org/exemplos/poo/caneta/Caneta.java</file>
-            <file>file:/C:/Users/aluno/Documents/NetBeansProjects/aula03/build/classes/aula03/org.exemplos.poo/src/org/exemplos/poo/caneta/PrincipalCaneta.java</file>
-            <file>file:/C:/Users/aluno/Documents/NetBeansProjects/aula03/build/classes/aula03/org.exemplos.poo/src/org/exemplos/poo/caneta/frmCaneta.java</file>
+            <file>file:/C:/Users/aluno/Documents/NetBeansProjects/org.exemplos.poo/src/org/caneta/aplicacao/Caneta.java</file>
+            <file>file:/C:/Users/aluno/Documents/NetBeansProjects/org.exemplos.poo/src/org/caneta/dao/CanetaDAOJDBC.java</file>
+            <file>file:/C:/Users/aluno/Documents/NetBeansProjects/org.exemplos.poo/src/org/caneta/conexao/ConexaoMySQL.java</file>
+            <file>file:/C:/Users/aluno/Documents/NetBeansProjects/org.exemplos.poo/src/org/caneta/aplicacao/frmCaneta.java</file>
+            <file>file:/C:/Users/aluno/Documents/NetBeansProjects/org.exemplos.poo/src/org/caneta/dao/CanetaDAO.java</file>
         </group>
     </open-files>
 </project-private>
