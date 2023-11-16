@@ -30,20 +30,22 @@ public class CanetaDAOJDBC implements CanetaDAO
     }
 
     @Override
-    public List<Caneta> listar() {
+    public List<Caneta> listar() 
+    {
         String select = "SELECT * FROM canetas";
 
         List<Caneta> canetas = new ArrayList<Caneta>();
 
-        try {
+        try 
+        {
             conexao = ConexaoMySQL.getConexao();
 
             sql = (PreparedStatement) conexao.prepareStatement(select);
 
             rset = sql.executeQuery();
 
-            while (rset.next()) {
-
+            while (rset.next()) 
+            {
                 Caneta caneta = new Caneta();
 
                 caneta.setCodigo(rset.getInt("codigo"));
@@ -54,11 +56,14 @@ public class CanetaDAOJDBC implements CanetaDAO
                 caneta.setTampada(rset.getBoolean("tampada"));
 
                 canetas.add(caneta);
-
             }
-        } catch (Exception e) {
+        } 
+        catch (Exception e) 
+        {
             e.printStackTrace();
-        } finally {
+        } 
+        finally 
+        {
             fecharConexao();
         }
 
@@ -80,5 +85,10 @@ public class CanetaDAOJDBC implements CanetaDAO
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public Caneta listar(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
