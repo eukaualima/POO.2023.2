@@ -12,6 +12,7 @@ import java.awt.Color;
 import java.sql.Connection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.Caneta;
 
@@ -55,6 +56,31 @@ public class frmPrincipal extends javax.swing.JFrame {
         } catch (Exception e) {
             throw e;
         }
+    }
+    
+    private void apagar() 
+    {
+        try 
+        {
+            Integer id = (Integer) modelo.getValueAt(tblCaneta.getSelectedRow(), 0);
+
+            int linha = canetaDAO.apagar(id);
+            
+            if (linha > 0) 
+            {
+                modelo.removeRow(tblCaneta.getSelectedRow());
+                JOptionPane.showMessageDialog(this, "Item excluído com sucesso!");
+            } 
+            else 
+            {
+                JOptionPane.showMessageDialog(this, "Erro ao excluir.");
+            }
+
+        } 
+        catch (Exception e) 
+        {
+            JOptionPane.showMessageDialog(this, "Por favor, selecionar uma linha da tabela");
+        } 
     }
     
     @SuppressWarnings("unchecked")
@@ -193,7 +219,14 @@ public class frmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApagarActionPerformed
-        // TODO add your handling code here:
+        Object[] opcao = {"Não", "Sim"};
+        int opcaoSelecionada = JOptionPane.showOptionDialog(this, "Deseja realmente apagar?", "Aviso",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, opcao, opcao[0]);
+        
+        if (opcaoSelecionada == 1) 
+        {
+            apagar();
+        }
     }//GEN-LAST:event_btnApagarActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed

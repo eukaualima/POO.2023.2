@@ -25,8 +25,34 @@ public class CanetaDAOJDBC implements CanetaDAO
     }
 
     @Override
-    public int apagar(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int apagar(int id) 
+    {
+        StringBuilder sqlBuilder = new StringBuilder();
+        sqlBuilder
+                .append("DELETE FROM canetas ")
+                .append("WHERE codigo = ?");
+        
+        String delete = sqlBuilder.toString();
+        int linha = 0;
+        
+        try 
+        {
+            conexao = ConexaoMySQL.getConexao();
+
+            sql = (PreparedStatement) conexao.prepareStatement(delete);
+            sql.setInt(1, id);
+            linha = sql.executeUpdate();
+        } 
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        } 
+        finally 
+        {
+            fecharConexao();
+        }
+
+        return linha;
     }
 
     @Override
