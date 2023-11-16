@@ -5,9 +5,9 @@ public class Caneta
     // < Atributos da classe >
     private String modelo;
     private String cor;
-    float ponta;
-    int carga;
-    boolean tampada;
+    private float ponta;
+    private int carga;
+    private boolean tampada;
     
     public int tampar ()
     {
@@ -45,6 +45,7 @@ public class Caneta
         return erro;
     }
 
+    // < Getters >
     public String getModelo() {
         return modelo;
     }
@@ -64,7 +65,8 @@ public class Caneta
     public boolean isTampada() {
         return tampada;
     }
-
+    
+    // < Setters >
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
