@@ -5,17 +5,34 @@
  */
 package aplicacao;
 
+import conexao.ConexaoMySQL;
+import java.awt.Color;
+import java.sql.Connection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author aluno
  */
 public class frmPrincipal extends javax.swing.JFrame {
-
-    /**
-     * Creates new form frmPrincipal
-     */
-    public frmPrincipal() {
+    
+    Connection conexao = null;
+    
+    public frmPrincipal() throws Exception {
         initComponents();
+        conexao = ConexaoMySQL.getConexao();
+        
+        if (conexao == null)
+        {
+            lblMensagem.setText("Sem conexão com o BD!");
+            lblMensagem.setForeground(Color.red);
+        }
+        else
+        {
+            lblMensagem.setText("Conectado com sucesso!");
+            lblMensagem.setForeground(Color.green);
+        }
     }
 
     /**
@@ -183,7 +200,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmPrincipal().setVisible(true);
+                try {
+                    new frmPrincipal().setVisible(true);
+                } catch (Exception ex) {
+                    Logger.getLogger(frmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
