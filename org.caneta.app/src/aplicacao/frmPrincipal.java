@@ -123,6 +123,8 @@ public class frmPrincipal extends javax.swing.JFrame {
 
             }
         ));
+        tblCaneta.setGridColor(new java.awt.Color(102, 102, 102));
+        tblCaneta.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(tblCaneta);
 
         btnInserir.setText("Inserir");
