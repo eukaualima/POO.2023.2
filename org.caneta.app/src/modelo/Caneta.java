@@ -3,6 +3,7 @@ package modelo;
 public class Caneta 
 {
     // < Atributos da classe >
+    private int codigo;
     private String modelo;
     private String cor;
     private float ponta;
@@ -46,6 +47,10 @@ public class Caneta
     }
 
     // < Getters >
+    public int getCodigo() {
+        return codigo;
+    }
+    
     public String getModelo() {
         return modelo;
     }
@@ -67,6 +72,10 @@ public class Caneta
     }
     
     // < Setters >
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+    
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
