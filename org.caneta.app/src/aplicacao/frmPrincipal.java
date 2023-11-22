@@ -10,6 +10,7 @@ import dao.CanetaDAO;
 import dao.DAOFactory;
 import java.awt.Color;
 import java.sql.Connection;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -55,6 +56,32 @@ public class frmPrincipal extends javax.swing.JFrame {
             }
         } catch (Exception e) {
             throw e;
+        }
+    }
+    
+    private void incluir() {
+        new frmCaneta(null).setVisible(true);
+    }
+    
+    private void editar() {
+        try {
+            String modelo_caneta = (String) modelo.getValueAt(tblCaneta.getSelectedRow(), 1);
+            String cor = (String) modelo.getValueAt(tblCaneta.getSelectedRow(), 2);
+            float ponta = (Float) modelo.getValueAt(tblCaneta.getSelectedRow(), 3);
+            int carga = (Integer) modelo.getValueAt(tblCaneta.getSelectedRow(), 4);
+            boolean tampada = (Boolean) modelo.getValueAt(tblCaneta.getSelectedRow(), 5);
+            
+            Caneta caneta = new Caneta();
+            caneta.setModelo(modelo_caneta);
+            caneta.setCor(cor);
+            caneta.setPonta(ponta);
+            caneta.setCarga(carga);
+            caneta.setTampada(tampada);
+
+            new frmCaneta(caneta).setVisible(true);
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecionar uma linha da tabela");
         }
     }
     
@@ -213,11 +240,11 @@ public class frmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
-        // TODO add your handling code here:
+        incluir();
     }//GEN-LAST:event_btnInserirActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        // TODO add your handling code here:
+        editar();
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApagarActionPerformed
