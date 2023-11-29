@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package aplicacao;
 
 import dao.CanetaDAO;
@@ -87,6 +82,7 @@ public class frmCaneta extends javax.swing.JFrame {
     
     private void inserir() {
         Caneta caneta_inserida = new Caneta();
+        caneta_inserida.setCodigo(caneta.getCodigo());
         caneta_inserida.setModelo(txtModelo.getText());
         caneta_inserida.setCor(caneta.getCor());
         caneta_inserida.setPonta(caneta.getPonta());
@@ -97,7 +93,7 @@ public class frmCaneta extends javax.swing.JFrame {
         if (linha > 0) {
             JOptionPane.showMessageDialog(this, "Contato inserido com sucesso!");
         } else {
-            JOptionPane.showMessageDialog(this, "Erro ao inserir Contato.");
+            JOptionPane.showMessageDialog(this, "Erro ao inserir Caneta.");
         }
         
         this.dispose();
@@ -105,9 +101,29 @@ public class frmCaneta extends javax.swing.JFrame {
     
     private void editar() {
         Caneta caneta_editada = new Caneta();
+        caneta_editada.setCodigo(caneta.getCodigo());
         caneta_editada.setModelo(txtModelo.getText());
-        caneta_editada.setCor(caneta.getCor());
-        caneta_editada.setPonta(caneta.getPonta());
+        
+        if (rbAzul.isSelected()) {
+            caneta_editada.setCor(rbAzul.getText());
+        } else if (rbVermelha.isSelected()) {
+            caneta_editada.setCor(rbVermelha.getText());
+        } else if (rbPreta.isSelected()) {
+            caneta_editada.setCor(rbPreta.getText());
+        } else {
+            caneta_editada.setCor(rbVerde.getText());
+        }
+
+        if (rb07.isSelected()) {
+            caneta_editada.setPonta(Float.parseFloat(rb07.getText()));
+        } else if (rb10.isSelected()) {
+            caneta_editada.setPonta(Float.parseFloat(rb10.getText()));
+        } else if (rb14.isSelected()) {
+            caneta_editada.setPonta(Float.parseFloat(rb14.getText()));
+        } else {
+            caneta_editada.setPonta(Float.parseFloat(rb16.getText()));
+        }
+        
         caneta_editada.setCarga(Integer.parseInt(txtCarga.getText()));
         caneta_editada.setTampada(caneta.isTampada());
 

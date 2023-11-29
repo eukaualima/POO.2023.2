@@ -15,13 +15,65 @@ public class CanetaDAOJDBC implements CanetaDAO
     ResultSet rset = null;
     
     @Override
-    public int inserir(Caneta contato) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int inserir(Caneta caneta) {
+        StringBuilder sqlBuilder = new StringBuilder();
+        sqlBuilder
+                .append("INSERT INTO canetas (modelo, ponta, cor, carga, tampada) ")
+                .append("VALUES (?, ?, ?, ?, ?)");
+     
+        String insert = sqlBuilder.toString();
+        int linha = 0;
+        try {
+            conexao = ConexaoMySQL.getConexao();
+
+            sql = (PreparedStatement) conexao.prepareStatement(insert);
+            sql.setString(1, caneta.getModelo());
+            sql.setFloat(2, caneta.getPonta());
+            sql.setString(3, caneta.getCor());
+            sql.setInt(4, caneta.getCarga());
+            sql.setBoolean(5, caneta.isTampada());
+            linha = sql.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            fecharConexao();
+        }
+        
+        return linha;
     }
 
     @Override
-    public int editar(Caneta contato) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int editar(Caneta caneta) {
+        StringBuilder sqlBuilder = new StringBuilder();
+        sqlBuilder
+                .append("UPDATE canetas SET ")
+                .append("modelo = ?,")
+                .append("ponta = ?,")
+                .append("cor = ?, ")
+                .append("carga = ?,")
+                .append("tampada = ? ")
+                .append("WHERE codigo = ?");
+        
+        String update = sqlBuilder.toString();
+        int linha = 0;
+        try {
+            conexao = ConexaoMySQL.getConexao();
+
+            sql = (PreparedStatement) conexao.prepareStatement(update);
+            sql.setString(1, caneta.getModelo());
+            sql.setFloat(2, caneta.getPonta());
+            sql.setString(3, caneta.getCor());
+            sql.setInt(4, caneta.getCarga());
+            sql.setBoolean(5, caneta.isTampada());
+            sql.setInt(6, caneta.getCodigo());
+            linha = sql.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            fecharConexao();
+        }
+
+        return linha;
     }
 
     @Override

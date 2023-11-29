@@ -51,7 +51,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         modelo.getDataVector().clear();
         try {
             for (Caneta caneta : canetaDAO.listar()) {
-                modelo.addRow(new Object[]{caneta.getCodigo(), caneta.getModelo(), caneta.getCor(),
+                modelo.addRow(new Object[]{ caneta.getCodigo(), caneta.getModelo(), caneta.getCor(),
                             caneta.getPonta(), caneta.getCarga(), caneta.isTampada()});
             }
         } catch (Exception e) {
@@ -65,6 +65,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     
     private void editar() {
         try {
+            int codigo = (Integer) modelo.getValueAt(tblCaneta.getSelectedRow(), 0);
             String modelo_caneta = (String) modelo.getValueAt(tblCaneta.getSelectedRow(), 1);
             String cor = (String) modelo.getValueAt(tblCaneta.getSelectedRow(), 2);
             float ponta = (Float) modelo.getValueAt(tblCaneta.getSelectedRow(), 3);
@@ -72,6 +73,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             boolean tampada = (Boolean) modelo.getValueAt(tblCaneta.getSelectedRow(), 5);
             
             Caneta caneta = new Caneta();
+            caneta.setCodigo(codigo);
             caneta.setModelo(modelo_caneta);
             caneta.setCor(cor);
             caneta.setPonta(ponta);
