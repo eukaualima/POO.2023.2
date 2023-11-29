@@ -48,10 +48,12 @@ public class frmCaneta extends javax.swing.JFrame {
             if (tampada)
             {
                 rbTampada.setSelected(true);
+                rbDestampada.setSelected(false);
             }
             else
             {
                 rbDestampada.setSelected(true);
+                rbTampada.setSelected(false);
             }
             
             float ponta = this.caneta.getPonta();
@@ -81,17 +83,35 @@ public class frmCaneta extends javax.swing.JFrame {
     }
     
     private void inserir() {
-        Caneta caneta_inserida = new Caneta();
-        caneta_inserida.setCodigo(caneta.getCodigo());
-        caneta_inserida.setModelo(txtModelo.getText());
-        caneta_inserida.setCor(caneta.getCor());
-        caneta_inserida.setPonta(caneta.getPonta());
-        caneta_inserida.setCarga(Integer.parseInt(txtCarga.getText()));
-        caneta_inserida.setTampada(caneta.isTampada());
+        Caneta canetaInserida = new Caneta();
+        canetaInserida.setModelo(txtModelo.getText());
+        
+        if (rbAzul.isSelected()) {
+            canetaInserida.setCor(rbAzul.getText());
+        } else if (rbVermelha.isSelected()) {
+            canetaInserida.setCor(rbVermelha.getText());
+        } else if (rbPreta.isSelected()) {
+            canetaInserida.setCor(rbPreta.getText());
+        } else {
+            canetaInserida.setCor(rbVerde.getText());
+        }
 
-        int linha = canetaDAO.inserir(caneta_inserida);
+        if (rb07.isSelected()) {
+            canetaInserida.setPonta(Float.parseFloat(rb07.getText()));
+        } else if (rb10.isSelected()) {
+            canetaInserida.setPonta(Float.parseFloat(rb10.getText()));
+        } else if (rb14.isSelected()) {
+            canetaInserida.setPonta(Float.parseFloat(rb14.getText()));
+        } else {
+            canetaInserida.setPonta(Float.parseFloat(rb16.getText()));
+        }
+
+        canetaInserida.setCarga(Integer.parseInt(txtCarga.getText()));
+        canetaInserida.setTampada(rbTampada.isSelected());
+        
+        int linha = canetaDAO.inserir(canetaInserida);
         if (linha > 0) {
-            JOptionPane.showMessageDialog(this, "Contato inserido com sucesso!");
+            JOptionPane.showMessageDialog(this, "Caneta inserida com sucesso!");
         } else {
             JOptionPane.showMessageDialog(this, "Erro ao inserir Caneta.");
         }
@@ -500,20 +520,11 @@ public class frmCaneta extends javax.swing.JFrame {
     }//GEN-LAST:event_rbVerdeActionPerformed
 
     private void rbTampadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbTampadaActionPerformed
-        int erro = caneta.tampar();
-        if (erro > 0)
-        {
-            JOptionPane.showMessageDialog(this, "A caneta JÁ está TAMPADA!");
-        }
+
     }//GEN-LAST:event_rbTampadaActionPerformed
 
     private void rbDestampadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbDestampadaActionPerformed
-        int erro = caneta.destampar();
-        
-        if (erro > 0)
-        {
-            JOptionPane.showMessageDialog(this, "A caneta JÁ está DESTAMPADA!");
-        }
+
     }//GEN-LAST:event_rbDestampadaActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
